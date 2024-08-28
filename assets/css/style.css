@@ -7,13 +7,14 @@
     /* fonts */
     --title-font: 'Poppins', sans-serif;
     --body-font: 'DM Sans', sans-serif;
-    --title-font-size: 3rem;
+    --big-title-font-size: 6.5rem;
+    --title-font-size: 3.5rem;
     --subtitle-font-size: 1.6rem;
 
     --header-height: 12rem;
 
-    --hue-base:100;
-    --hue-base-second: 30;
+    --hue-base: 250;
+    --hue-base-second:100;
 
     /*HSL color mode*/
     --color-white: hsl(var(--hue-base), 27%, 96%);
@@ -22,7 +23,7 @@
     --color-brown: hsl(var(--hue-base-second), 26%, 47%); 
     --color-yellow: hsl(60, 94%, 62%);
 }
-
+/* "" */
 
 /*===================== RESET =====================*/
 
@@ -32,75 +33,33 @@
     box-sizing: border-box;
 }
 
+/*===================== GENERAL =====================*/
 
 a{
     color: var(--color-white);
-    text-align: none;
     text-decoration: none;
     list-style: none;
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-green);
-    height: var(--header-height);
+h1{
+    font-size: var(--big-title-font-size);
+    text-align: center;
+    color: var(--color-white);
+    margin-bottom: 2rem;
 }
 
-.nav-list{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
+h3{
+    font-size: var(--title-font-size);
+    text-align: center;
+    color: var(--color-white);
 }
 
-.nav-list li{
-    letter-spacing: .4rem;
-    margin-inline: 2rem;
-    color: white;
+p{
     font-size: var(--subtitle-font-size);
-    cursor: pointer;
-}
-
-.nav-list a li:hover{
-    color: var(--color-orange);
-}
-
-.nav-list.active{
-    transform: translateX(0);
-
-}
-
-.mobile-menu{
-    cursor: pointer;
-}
-
-.mobile-menu div{
-    display: none;
-}
-
-.mobile-menu.active .line1{
-    transform: rotate(-45deg) translate(-8px, 8px);
-}
-
-.mobile-menu.active .line2{
-    opacity: 0;
-}
-
-.mobile-menu.active .line3{
-    transform: rotate(45deg) translate(-8px, -8px);
-}
-
-.redes-sociais{
-    margin-right: 4rem;
-}
-
-.icon-redes{
-    margin: 2rem;
-    margin-right: 2rem;
-    font-size: 2.4rem;
-    color: var(--color-orange);
-    cursor: pointer;
+    color: var(--color-white);
+    line-height: 2.5rem;
+    margin-block: 3rem;
+    display: flex;
 }
 
 body{
@@ -109,38 +68,11 @@ body{
 }
 main{
     display: flex;
-}
-.divCenter{
-    max-width: 80rem;
-    margin-top: 20rem;
-    margin-inline: auto;
+    flex-direction: column;
 }
 
-h1{
-    font-size: 6.5rem;
-    text-align: center;
-    color: var(--color-white);
-    margin-bottom: 2rem;
-}
-
-h3{
-    font-size: 3.5rem;
-    text-align: center;
-    color: var(--color-white);
-}
-
-.dimensionar{
-    width: 8rem;
-    margin-left: 4rem;
-}
-
-.redes-sociais{
+.content-section{
     display: flex;
-}
-.glass{
-    background: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(8px);
 }
 
 .button {
@@ -167,8 +99,147 @@ h3{
    background-color: var(--color-brown); /* Cor de fundo ao clicar */
 }
 
-@media (max-width: 55rem){
+.social-media{
+    display: flex;
+    margin-right: 3rem;
+    margin-left: 1.5rem;
+    justify-content: space-between;
+}
+
+.icon-redes{
+    margin: .5rem;
+    margin-right: 1.5rem;
+    font-size: 2.4rem;
+    color: var(--color-orange);
+    cursor: pointer;
+}
+
+.icon-redes:hover{
+    color: var(--color-white);
+}
+
+/*===================== NAVIGATION =====================*/
+
+    /*================= MOBILE ==================*/
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-green);
+    height: var(--header-height);
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-list li{
+    letter-spacing: .4rem;
+    margin-inline: 2rem;
+    color: white;
+    font-size: var(--subtitle-font-size);
+    cursor: pointer;
+}
+
+.nav-list a li:hover{
+    color: var(--color-orange);
+}
+
+.nav-list.active{
+    transform: translateX(0);
+}
+
+.mobile-menu{
+    cursor: pointer;
+}
+
+.mobile-menu div{
+    display: none;
+}
+
+.mobile-menu.active .line1{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2{
+    opacity: 0;
+}
+
+.mobile-menu.active .line3{
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/*===================== HOME =====================*/
+
+#home{
+    width: 99vw;
+    height: calc(100vh - var(--header-height));/*Recortar a altura do menu da imagem de fundo da home*/
+    margin-inline: auto; 
+    background-image: url("../../images/frango-glass.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home{ 
+    max-width: 80rem;
+    margin-top: 20rem;
+    margin-inline: auto;
+    text-align: center;
+}
+.dimensionar{
+    width: 8rem;
+    margin-left: 4rem;
+}
+
+/*===================== ABOUT =====================*/
+
+#about{
+    background-color: var(--color-brown);
+    text-align: center;
+    padding-top: 6rem;
+    height: 100vh;
+}
+
+#about .content-section{
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+h2{
+    font-size: var(--title-font-size);
+    color: var(--color-white);
+    text-align: center;
+    margin-inline: auto;
+}
+
+.text-about{
+    text-align: center;
+    width: 60rem;
+    color: var(--color-white);
+    margin-inline: auto;
+}
+
+.text-about p{
+    text-align: center;
+    height: 60rem;
+    width: 60rem;
+    color: var(--color-white);
+    line-height: 4rem;
+    padding: auto;
+}
+
+@media (max-width: 1026px){
     body{
+        overflow-x: hidden;
+    }
+    #home{
         overflow: hidden;
     }
     .nav-list{
@@ -185,10 +256,18 @@ h3{
     transition: transform 0.3s ease-in;
     }
 
-    .redes-sociais{
-        display: none;
+    .social-media{
+        display: flex;
+        margin-inline: auto;
     }
 
+    .icon-redes{
+        color: var(--color-white);
+    }
+
+    .icon-redes:hover{
+        color: var(--color-orange);
+    }
     .mobile-menu div{
         display: flex;
         width: 3.2rem;
@@ -210,6 +289,20 @@ h3{
         font-size: 2rem;
         text-align: center;
         color: var(--color-white);
+    }
+
+    .text-about{
+        text-align: center;
+        width: 30rem;
+        color: var(--color-white);
+        margin-inline: auto;
+    }
+    .text-about p{
+        text-align: center;
+        height: 60rem;
+        width: 30rem;
+        color: var(--color-white);
+        line-height: 4rem;
     }
 
 
