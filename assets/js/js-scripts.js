@@ -55,8 +55,8 @@ mobileNavbar.init();
 const sr = ScrollReveal({
     origin: 'bottom',   // direção da animação
     distance: '50px',   // distância do movimento do elemento
-    duration: 1000,     // duração da animação
-    delay: 200,         // atraso antes da animação começar
+    duration: 100,     // duração da animação
+    delay: 100,         // atraso antes da animação começar
     reset: false        // se a animação deve repetir ao rolar de volta
 });
 
