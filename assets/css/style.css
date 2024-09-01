@@ -75,7 +75,7 @@ p{
 
 body{
     height: 100vh;
-
+    overflow-x: hidden;
 }
 main{
     display: flex;
@@ -161,6 +161,7 @@ nav{
 }
 
 .nav-list.active{
+    display: flex;
     transform: translateX(0);
     overflow-x: hidden;
 }
@@ -292,7 +293,7 @@ nav{
 /* Estilo para o select ao receber foco */
 #products select:focus {
     border-color: #66afe9;
-    box-shadow: 0 0 5rem rgba(102, 175, 233, 0.5);
+    box-shadow: 0 0 .5rem rgba(102, 175, 233, 0.5);
     outline: none;
 }
 
@@ -550,7 +551,7 @@ a .back-to-top.show{
     /*===================== NAVIGATION =====================*/
 
     .nav-list{
-        display: flex;
+        display: none;
         position: absolute;
         top: 11.9rem;
         width: 100vw;
